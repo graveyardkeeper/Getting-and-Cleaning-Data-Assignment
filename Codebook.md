@@ -1,4 +1,4 @@
-The run_analysis.R script performs the data preparation and then followed by the 5 steps required as described in the course project’s definition.
+The run_analysis.R script performs the data preparation and then followed by the steps required as described in the course project’s definition.
 
 ### Motivation
 - First, download and unzip the data file.
@@ -18,7 +18,10 @@ if (!file.exists("data")){
 ```
 
 - This script download data for project.
+
+``` R
 download.file(url,destfile = "./data/dat.zip", mode = "wb")
+```
 
 - This script unzip downloaded zip file.
 
@@ -31,8 +34,17 @@ unzip(zipfile = "./data/dat.zip", exdir = "./data")
 - This scripts read in require data and store in variables.
 
 ``` R
+
 X_train <- read.table(file.path(datapath, "train","X_train.txt"), header=FALSE)
+y_train <- read.table(file.path(datapath, "train", "y_train.txt"), header = FALSE)
+
 X_test <- read.table(file.path(datapath, "test", "X_test.txt"), header=FALSE)
+y_test <- read.table(file.path(datapath, "test", 'y_test.txt'), header = FALSE)
+
+
+features <- read.table(file.path(datapath, "features.txt"), header = FALSE)
+activity_labels <- read.table(file.path(datapath, "activity_labels.txt"), header = FALSE)
+
 ```
 
 - This scripts merge datasets by using rbind function.
