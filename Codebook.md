@@ -7,10 +7,11 @@ The run_analysis.R script performs the data preparation and then followed by the
 - Finally, merge datasets by using rbind() %>% extract only measurements on mean and std by using regular expression %>% use dplyr to  generate tidy data file.
 
 
-#### 1. Create the directory and download the dataset
+#### 1. Create directory and download the dataset
 
-if (!file.exists("data")){
-        dir.create("data")
+- This code create directory to store `UCI HAR Dataset`
+`if` (!`file.exists`("data")){
+        `dir.create`("data")
 }
 
 
